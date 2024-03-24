@@ -5,9 +5,9 @@ import AboutUs from '@/components/AboutUs'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main>
       <Banner/>
-      <AboutUs id='aboutUs'/>
+      <AboutUs/>
     </main>
   )
 }

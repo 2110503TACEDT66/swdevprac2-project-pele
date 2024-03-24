@@ -3,7 +3,7 @@
     padding: 5px;
     margin: 0;
     width: 100vw;
-    height: 110vh;
+    height: 100vh;
     position: relative;
     opacity: 100%;
 }
@@ -13,7 +13,7 @@
     top: 27vh;
     z-index: 20;
     left: 10vw;
-    font-size: 150px;
+    font-size: calc(6vh + 6vw);
     color: white;
     z-index: 30;
     font-family: 'Times New Roman', Times, serif ;

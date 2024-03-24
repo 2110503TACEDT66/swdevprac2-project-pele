@@ -6,7 +6,7 @@ import TopMenuItem from './TopMenuItem';
 
 export default function TopMenu() {
 
-    
+    const session =''
 
     return (
         <div className={styles.menucontainer}>
@@ -15,7 +15,17 @@ export default function TopMenu() {
             <TopMenuItem title='Hotels' pageRef='/hotels'/>
 
         <div className='flex flex-row absolute right-0 h-full'>
-        <TopMenuItem title='My Booking' pageRef='/mybooking'/>
+        {
+            session? '' : <TopMenuItem title='Register' pageRef='/register'/>
+        }
+        {
+            session? <TopMenuItem title='Sign Out' pageRef='/signout'/> :
+            <TopMenuItem title='Sign In' pageRef='/signin'/>
+        }
+        {
+            session? <TopMenuItem title='My Booking' pageRef='/mybooking'/> : ''
+        }  
+
         </div>
         </div>
     );
