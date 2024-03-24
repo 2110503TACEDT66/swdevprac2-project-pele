@@ -4,8 +4,12 @@ import HotelCard from "@/components/HotelCard";
 import Image from "next/image";
 import styles from '../page.module.css'
 import { useState } from "react";
+import HotelCatalog from "@/components/HotelCatalog";
+import getHotels from "@/libs/getHotels";
+
 
 export default function hotelsPage(){
+    const hotels = getHotels()
 
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -32,11 +36,8 @@ export default function hotelsPage(){
                         className="border border-gray-300 rounded-md px-4 py-2 mt-4 mb-2 focus:outline-none focus:border-blue-500"
                     />
                 </div>
-            <div className="flex flex-row m-[20px] flex-wrap justify-around content-around">
-            <HotelCard hotelName="Hotel Carifornia" imgSrc="/img/cover2.jpg"/>
-            <HotelCard hotelName="Hotel Carifornia" imgSrc="/img/cover2.jpg"/>
-            <HotelCard hotelName="Hotel Carifornia" imgSrc="/img/cover2.jpg"/>
-            <HotelCard hotelName="Hotel Carifornia" imgSrc="/img/cover2.jpg"/>
+            <div className="flex flex-row m-[20px] flex-wrap justify-around content-around ">
+            <HotelCatalog hotelsJson={hotels}/>
             </div>
             </div>
         </main>

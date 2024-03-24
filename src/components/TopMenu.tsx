@@ -13,6 +13,7 @@ export default function TopMenu() {
             <TopMenuItem title='Home' pageRef='/'/>
             <TopMenuItem title='About us' pageRef='#aboutUs'/>
             <TopMenuItem title='Hotels' pageRef='/hotels'/>
+            <TopMenuItem title='Booking' pageRef='/booking'/>
 
         <div className='flex flex-row absolute right-0 h-full'>
         {

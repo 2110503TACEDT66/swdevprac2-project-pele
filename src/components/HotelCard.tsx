@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 
 export default function HotelCard({hotelName , imgSrc} : {hotelName : string , imgSrc : string}) {
@@ -5,7 +6,7 @@ export default function HotelCard({hotelName , imgSrc} : {hotelName : string , i
     const session =''
 
     return (
-        <div className='w-[300px] h-[300px] rounded-lg shadow-lg bg-white '>
+        <div className='w-[300px] h-[300px] rounded-lg shadow-lg bg-white'>
             <div className='w-full h-[70%] relative rounded-t-lg'>
                 <Image src={imgSrc}
                     alt='Hotel'
