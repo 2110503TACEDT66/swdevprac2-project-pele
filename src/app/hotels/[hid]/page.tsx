@@ -11,7 +11,7 @@ export default async function HotelDetailPage( {params} : {params : {hid:string}
             <div className="flex flex-row my-5">
                 <Image src="/img/cover2.jpg" alt="Hospital Image" width={0} height={0} sizes="100vw" className="rounded-lg w-[30%] m-10"/>  
                 <div className="text-md mx-5 text-left text-white my-10"> {HotelDetail.data.name}
-                <div className=""> Address: {HotelDetail.data.address}, {HotelDetail.data.district}, {HotelDetail.data.province}, {HotelDetail.data.postalcode} </div>
+                <div className=""> Address: {HotelDetail.data.address} </div>
                 <div className=""> Tel: {HotelDetail.data.tel} </div>
                 </div>
             </div>

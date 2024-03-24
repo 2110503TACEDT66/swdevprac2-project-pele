@@ -30,8 +30,7 @@ export default function CardPanel(){
                     ))  //Array.map ( (x)=> (ฟังชั่นแสดงไรบ้างล้ะ) )
                 }
             </div>
-
-
         </div>  //สมากชิกแต่ละตัวเปลี่ยนเป้น array โดน map กลายเป้น jsx component ในตัวแปรชื่อ car
     )
+    
 }
