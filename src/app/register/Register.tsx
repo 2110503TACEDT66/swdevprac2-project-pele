@@ -33,44 +33,48 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className='border rounded-lg mx-[40vw] mt-[35vh] p-10'>
-      <h2 className='text-white text-4xl font-sans '>Register</h2>
-      <form onSubmit={handleSubmit} className=''>
-        <label className='text-white text-xl font-sans'>
+    <div className='justify-center items-center h-[500px] w-[400px] mt-[200px] p-9 border rounded-lg mx-auto'>
+      <h2 className='text-white text-4xl font-sans text-left'>Register</h2>
+      <form onSubmit={handleSubmit} className='my-7 text-left'>
+        <label className='text-white text-lg font-sans mb-7'>
           FullName
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            placeholder="Full name"
             required
-            className='text-black'
+            className='w-[100%] border-1 rounded-md p-[8px] text-[16px] mb-5 text-slate-600'
           />
         </label>
+        
         <br />
-        <label className='text-white text-xl font-sans'>
+        <label className='text-white text-lg font-sans mb-7'>
           Email
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
             required
-            className='text-black'
+            className='w-[100%] border-1 rounded-md p-[8px] text-[16px] mb-5 text-slate-600'
           />
         </label>
         <br />
-        <label className='text-white text-xl font-sans'>
+        <label className='text-white text-lgfont-sans mb-7'>
           Password
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
             required
-            className='text-black'
+            className='w-[100%] border-1 rounded-md p-[8px] text-[16px] mb-5 text-slate-600'
           />
         </label>
         <br />
       </form>
-      <button type="submit" className='text-white text-xl font-sans' onClick={handleSubmit}>Register</button>
+      <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-slate-700 hover:shadow-lg' onClick={handleSubmit}>Register</button>
     </div>
   );
 };

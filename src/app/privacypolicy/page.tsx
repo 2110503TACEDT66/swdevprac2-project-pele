@@ -3,8 +3,8 @@ import React from 'react';
 export default function PrivacyPolicyPage() {
 
   return (
-    <main className='bg-white'>
-        <div className="container  my-[100px] px-9 py-8">
+    <main className='bg-slate-100'>
+        <div className=" bg-white container mx-[80px] px-[150px]  py-[150px] border text-zinc-800">
         <h1 className="text-3xl font-semibold mb-4">Privacy Policy</h1>
         <div className="text-lg">
         <h2 className="text-2xl font-semibold mb-2">Introduction</h2>
