@@ -3,7 +3,8 @@ import Image from "next/image"
 
 export default function AboutUs(){
     return(
-        <div className="">  
+        <div className="">
+              
             <h1 className="text-white p-5 text-8xl font-serif">ABOUT US</h1>
             <div className="w-full h-[300px] bg-white rounded-3xl flex flex-row mt-10 shadow-xl shadow-black p-5">
                 <div className="h-full w-[30%] relative rounded-l-3xl">

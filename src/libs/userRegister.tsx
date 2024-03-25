@@ -1,17 +1,16 @@
 
 
-export default async function userRegister(name :string, email : string, password : string, role : string) {
-      const response = await fetch("https://localhost:3500/api/v1/auth/register", {
+export default async function userRegister(userName :string, userEmail : string, userPassword : string, userRole : string) {
+      const response = await fetch("http://localhost:3500/api/v1/auth/register", {
         method: "POST",
-        mode:"cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
-          role: role
+          name: userName,
+          email: userEmail,
+          password: userPassword,
+          role: userRole
         }),
       });
       

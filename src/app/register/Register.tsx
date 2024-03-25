@@ -8,15 +8,16 @@ export default function RegisterForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('user');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await userRegister(name, email, password, role);
-      // Optionally, you can handle successful registration here, e.g., show a success message.
+      console.log('User registered successfully');
     } catch (error) {
       console.error('Failed to register:', error);
-      // Optionally, you can handle registration failure here, e.g., show an error message.
+      setError('Failed to register. Please try again.');
     }
   };
 
@@ -62,6 +63,7 @@ export default function RegisterForm() {
         </label>
         <br />
         <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white'>Register</button>
+        {error && <p className="text-red-500">{error}</p>}
       </form>
     </div>
   );
