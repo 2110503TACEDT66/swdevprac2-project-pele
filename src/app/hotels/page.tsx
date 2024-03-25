@@ -6,6 +6,8 @@ import styles from '../page.module.css'
 import { useState } from "react";
 import HotelCatalog from "@/components/HotelCatalog";
 import getHotels from "@/libs/getHotels";
+import { Suspense } from "react";
+import { LinearProgress } from "@mui/material"
 
 
 export default function hotelsPage(){
@@ -20,24 +22,18 @@ export default function hotelsPage(){
     return(
         <main>
             <div className={styles.banner}>
-            <Image src={'/img/cover.jpg'}
+            <Image src={'/img/cover.jpeg'}
             alt='cover'
             fill={true}
             priority
             objectFit='cover'
-            className='opacity-30'
+            style={{ zIndex: -1 }}
             />
-            <div className="text-center my-[10%]">
-                    <input
-                        type="text"
-                        placeholder="Search hotels..."
-                        value={searchQuery}
-                        onChange={handleSearchInputChange}
-                        className="border border-gray-300 rounded-md px-4 py-2 mt-4 mb-2 focus:outline-none focus:border-blue-500"
-                    />
-                </div>
-            <div className="flex flex-row m-[20px] flex-wrap justify-around content-around ">
-            <HotelCatalog hotelsJson={hotels}/>
+            <div className="flex flex-row m-[20px] mt-[200px] flex-wrap justify-around content-around ">
+                <Suspense fallback={<p className="text-white text-center text-4xl font-sans p-10">Loading ... <LinearProgress className="w-[1000px] h-[20px] rounded-3xl mt-5"/></p>}>
+                    <HotelCatalog hotelsJson={hotels}/>
+                </Suspense>
+            
             </div>
             </div>
         </main>

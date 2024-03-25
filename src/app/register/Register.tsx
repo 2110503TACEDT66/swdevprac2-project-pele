@@ -1,34 +1,22 @@
 'use client'
 
 import React, { useState } from 'react';
+import userRegister from '@/libs/userRegister';
 
-const RegisterForm = () => {
+export default function RegisterForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('user'); // Default role is 'user'
+  const [role, setRole] = useState('user');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3500/api/v1/auth/register', {
-        method: 'POST',
-        mode : "no-cors",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({"name" : name, "email" : email, "password" : password, "role" : role }),
-      });
-  
-      if (response.ok) {
-        // Registration successful
-        console.log('User registered successfully');
-      } else {
-        // Registration failed
-        console.error('Registration failed:', response.statusText);
-      }
+      await userRegister(name, email, password, role);
+      // Optionally, you can handle successful registration here, e.g., show a success message.
     } catch (error) {
-      console.error('An error occurred:', error);
+      console.error('Failed to register:', error);
+      // Optionally, you can handle registration failure here, e.g., show an error message.
     }
   };
 
@@ -61,7 +49,7 @@ const RegisterForm = () => {
           />
         </label>
         <br />
-        <label className='text-white text-lgfont-sans mb-7'>
+        <label className='text-white text-lg font-sans mb-7'>
           Password
           <input
             type="password"
@@ -73,10 +61,8 @@ const RegisterForm = () => {
           />
         </label>
         <br />
+        <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white'>Register</button>
       </form>
-      <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white' onClick={handleSubmit}>Register</button>
     </div>
   );
-};
-
-export default RegisterForm;
+}

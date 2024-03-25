@@ -1,6 +1,6 @@
 export default async function getHotels() {
     
-    await new Promise( (resolve)=>setTimeout(resolve,1000) )
+    await new Promise( (resolve)=>setTimeout(resolve,5000) )
     
     const response = await fetch("http://localhost:3500/api/v1/hotels")
     
