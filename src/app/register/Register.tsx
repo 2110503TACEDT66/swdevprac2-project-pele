@@ -33,7 +33,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className='justify-center items-center h-[500px] w-[400px] mt-[200px] p-9 border rounded-lg mx-auto'>
+    <div className='justify-center items-center h-[500px] w-[400px] mt-[200px] p-9 border rounded-lg mx-auto shadow-md shadow-white hover:shadow-2xl hover:shadow-white'>
       <h2 className='text-white text-4xl font-sans text-left'>Register</h2>
       <form onSubmit={handleSubmit} className='my-7 text-left'>
         <label className='text-white text-lg font-sans mb-7'>
@@ -74,7 +74,7 @@ const RegisterForm = () => {
         </label>
         <br />
       </form>
-      <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-slate-700 hover:shadow-lg' onClick={handleSubmit}>Register</button>
+      <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-zinc-900 hover:shadow-lg hover:shadow-white' onClick={handleSubmit}>Register</button>
     </div>
   );
 };

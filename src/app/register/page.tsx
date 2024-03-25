@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Register from './Register';
+import BottomPage from "@/components/BottomPage";
 
 export default function RegisterPage() {
   return (
@@ -17,8 +18,8 @@ export default function RegisterPage() {
         <div className="text-center">
             <Register/>
         </div>
-        
       </div>
+      <BottomPage/>
     </main>
   );
 }
