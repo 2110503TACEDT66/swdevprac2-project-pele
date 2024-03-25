@@ -11,7 +11,7 @@ export default function TopMenu() {
     return (
         <div className={styles.menucontainer}>
             <TopMenuItem title='Home' pageRef='/'/>
-            <TopMenuItem title='About us' pageRef='#aboutUs'/>
+            <TopMenuItem title='About us' pageRef='/about'/>
             <TopMenuItem title='Hotels' pageRef='/hotels'/>
             <TopMenuItem title='Booking' pageRef='/booking'/>
 

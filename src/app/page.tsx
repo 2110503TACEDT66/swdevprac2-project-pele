@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Banner from '@/components/Banner'
-import AboutUs from '@/components/AboutUs'
+import BottomPage from '@/components/BottomPage'
 
 export default function Home() {
   return (
     <main>
       <Banner/>
-      <AboutUs/>
+      <div className='h-[200px]'>
+          <BottomPage/>
+      </div>
     </main>
   )
 }

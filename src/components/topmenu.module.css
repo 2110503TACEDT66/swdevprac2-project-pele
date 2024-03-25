@@ -1,12 +1,12 @@
 .menucontainer {
     height: 100px;
     position: fixed;
-    top: 3vh;
     left: 0px;
     right: 0px;
     z-index: 30;
     display: flex;
     flex-direction: row;
+    background-color: gray;
 }
 .logoimg {
     height: 100%;
@@ -20,6 +20,5 @@
     margin-bottom: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 10pt;
-    color: lightgray;
-    opacity: 50%;
+    color: white;
 }

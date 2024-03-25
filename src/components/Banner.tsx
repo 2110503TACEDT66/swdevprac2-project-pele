@@ -7,17 +7,14 @@ import { useState } from 'react'
 
 export default function Banner () {
 
-    const covers = ['/img/cover.jpg','/img/cover2.jpg'];
-    const [index,setIndex] = useState(0)
 
     return (
-        <div className={styles.banner} onClick={()=>{setIndex(index+1)}}>
-            <Image src={covers[index%2]}
+        <div className={styles.banner}>
+            <Image src={'/img/cover.jpeg'}
             alt='cover'
             fill={true}
             priority
             objectFit='cover'
-            className='opacity-30'
             />
             <div className={styles.bannerText}>
                 <h1 className='opacity-90 font-extrabold'>Hotels</h1>

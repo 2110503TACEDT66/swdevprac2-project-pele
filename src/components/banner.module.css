@@ -3,17 +3,18 @@
     padding: 5px;
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: 900px;
     position: relative;
     opacity: 100%;
 }
 
 .bannerText {
     position: relative;
-    top: 27vh;
+    top: 200px;
+    bottom: auto;
     z-index: 20;
     left: 10vw;
-    font-size: calc(6vh + 6vw);
+    font-size: 10vw;
     color: white;
     z-index: 30;
     font-family: 'Times New Roman', Times, serif ;
