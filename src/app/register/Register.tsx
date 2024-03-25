@@ -35,7 +35,7 @@ const RegisterForm = () => {
   return (
     <div className='justify-center items-center h-[500px] w-[400px] mt-[200px] p-9 border rounded-lg mx-auto shadow-md shadow-white hover:shadow-2xl hover:shadow-white'>
       <h2 className='text-white text-4xl font-sans text-left'>Register</h2>
-      <form onSubmit={handleSubmit} className='my-7 text-left'>
+      <form onSubmit={handleSubmit} className='mt-7 text-left'>
         <label className='text-white text-lg font-sans mb-7'>
           FullName
           <input
@@ -44,7 +44,7 @@ const RegisterForm = () => {
             onChange={(e) => setName(e.target.value)}
             placeholder="Full name"
             required
-            className='w-[100%] border-1 rounded-md p-[8px] text-[16px] mb-5 text-slate-600'
+            className='w-[100%] border-1 rounded-md p-[8px] mt-3 text-[16px] mb-5 text-slate-600'
           />
         </label>
         
@@ -57,7 +57,7 @@ const RegisterForm = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
             required
-            className='w-[100%] border-1 rounded-md p-[8px] text-[16px] mb-5 text-slate-600'
+            className='w-[100%] border-1 rounded-md p-[8px] text-[16px] mt-3 mb-5 text-slate-600'
           />
         </label>
         <br />
@@ -69,12 +69,12 @@ const RegisterForm = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
-            className='w-[100%] border-1 rounded-md p-[8px] text-[16px] mb-5 text-slate-600'
+            className='w-[100%] border-1 rounded-md p-[8px] text-[16px] mt-3 mb-5 text-slate-600'
           />
         </label>
         <br />
       </form>
-      <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-zinc-900 hover:shadow-lg hover:shadow-white' onClick={handleSubmit}>Register</button>
+      <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white' onClick={handleSubmit}>Register</button>
     </div>
   );
 };
