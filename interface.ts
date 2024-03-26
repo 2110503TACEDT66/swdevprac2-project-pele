@@ -16,12 +16,19 @@ export interface HotelItem {
 
   export interface BookingItem {
     _id : string
-    user : string,
-    hotel: string,
     startDate : string , 
     endDate : string ,
+    user : string ,
+    hotel: {
+      _id: string,
+      name: string,
+      address: string,
+      tel: string,
+      id: string
+    },
     createdAt : string ,
-    __v : string 
+    __v : number 
+
   }
   export interface BookingJson {
     success : boolean , 
