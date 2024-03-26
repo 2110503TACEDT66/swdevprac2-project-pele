@@ -26,7 +26,7 @@ export default function AboutUs(){
                     fill={true}
                     className="rounded-r-3xl object-cover"/>
                 </div>
-                <div className="h-full w-[70%] relative text-sky-900 ml-5 font-serif pl-10 pt-10 text-center p-5 bg-cyan-100 rounded-l-3xl ">
+                <div className="h-full w-[70%] relative text-sky-900 mr-5 font-serif pl-10 pt-10 text-center p-5 bg-cyan-100 rounded-l-3xl ">
                     <h1 className="text-4xl py-5">Peeratuch Khammeesak</h1>
                     <h2 className="text-3xl py-5">Computer Engineering Chula</h2>
                 </div>
@@ -34,12 +34,12 @@ export default function AboutUs(){
             </div>
             <div className="w-full h-[300px] bg-white rounded-3xl flex flex-row mt-20 shadow-xl shadow-black p-5">
                 <div className="h-full w-[30%] relative rounded-l-3xl">
-                    <Image src='/img/purem.png'
+                    <Image src='/img/puremm.png'
                     alt='true'
                     fill={true}
                     className="rounded-l-3xl object-cover"/>
                 </div>
-                <div className="h-full w-[70%] relative ml-10 mt-5 text-slate-700 font-serif p-5">
+                <div className="h-full w-[70%] relative text-cyan-100 ml-5 font-serif pl-10 pt-10 text-center p-5 bg-sky-900 rounded-r-3xl">
                     <h1 className="text-4xl py-5">Supanat Thanaphonpho</h1>
                     <h2 className="text-3xl py-5">Computer Engineering Chula</h2>
                 </div>
