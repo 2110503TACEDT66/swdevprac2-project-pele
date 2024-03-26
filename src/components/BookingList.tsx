@@ -26,7 +26,7 @@ export default async function BookingList(){
                 onClick={ ()=> { console.log(bookingItem._id); deleteBooking(bookingItem._id)}}>  
                 Cancel This Booking </button>
                 
-                <Link href="/mybooking/edit">
+                <Link href={`/mybooking/edit?id=${bookingItem._id}$hid=${bookingItem.hotel._id}`}>
                 <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 
                 text-white shadow-sm"> 
                 Edit This Booking </button>

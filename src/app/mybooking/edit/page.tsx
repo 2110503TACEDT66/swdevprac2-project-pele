@@ -27,10 +27,12 @@ export default async function MyBookingEditPage() {
     if (!session || !session.user.token) return null
 
     const urlParams = useSearchParams()
-    const hid = urlParams.get('id')
+    const id = urlParams.get('id')
+    const hid = urlParams.get('hid')
     
     const hotelItems = useAppSelector(state => state.hotelSlice.hotelItems)
     const bookItems = useAppSelector(state => state.bookSlice.bookItems)
+
     
 
     const dispatch = useDispatch<AppDispatch>()
@@ -41,9 +43,8 @@ export default async function MyBookingEditPage() {
         try {
             const startDateTime = startDate.toDate();
             const endDateTime = endDate.toDate();
-            const id = 
     
-            await updateBooking(id,);
+            await updateBooking(id , startDateTime , endDateTime , hotel);
             console.log("makeBooking success");
         } catch (error) {
             console.error("Error making booking:", error);
