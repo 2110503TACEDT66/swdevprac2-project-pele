@@ -1,9 +1,6 @@
-'use client'
-
 import { NextAuthOptions  } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import userLogIn from "@/libs/userLogin";
-import { useRouter } from "next/navigation";
 
 export const authOptions: NextAuthOptions = {
     providers : [
@@ -23,8 +20,7 @@ export const authOptions: NextAuthOptions = {
               
               if(!credentials) return null
               const user = await userLogIn(credentials.email,credentials.password)
-              const router = useRouter()
-              router.push('/')
+
         
               if (user) {
                 // Any object returned will be saved in `user` property of the JWT
