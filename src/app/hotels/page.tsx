@@ -12,12 +12,6 @@ import { LinearProgress } from "@mui/material"
 export default function hotelsPage(){
     const hotels = getHotels()
 
-    const [searchQuery, setSearchQuery] = useState('');
-
-    const handleSearchInputChange = (e) => {
-        setSearchQuery(e.target.value);
-    };
-
     return(
         <main>
             <div className='block p-[5px] m-0 w-[100vw] h-fit relative'>
