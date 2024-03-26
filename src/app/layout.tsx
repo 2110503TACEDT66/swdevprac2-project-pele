@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google'
 import Banner from '@/components/Banner'
 import NextAuthProvider from '@/providers/NextAuthProvider'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '@/libs/auth'
+import {authOptions} from '@/libs/auth'
 import ReduxProvider from '@/redux/ReduxProvider'
 import BottomPage from '@/components/BottomPage'
 
