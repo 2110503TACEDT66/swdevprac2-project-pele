@@ -5,7 +5,7 @@ import styles from './topmenu.module.css'
 import { Link } from '@mui/material';
 import TopMenuItem from './TopMenuItem';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/libs/auth';
 
 
 

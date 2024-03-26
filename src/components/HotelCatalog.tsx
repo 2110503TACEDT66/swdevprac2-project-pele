@@ -1,3 +1,4 @@
+import { HotelItem, HotelJson } from "../../interface"
 import HotelCard from "./HotelCard"
 import Link from "next/link"
 
