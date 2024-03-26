@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const TransitionWrapper = ({children}) => {
+const TransitionWrapper = (children : any) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

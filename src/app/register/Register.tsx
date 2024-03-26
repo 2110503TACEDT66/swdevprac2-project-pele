@@ -13,7 +13,7 @@ export default function RegisterForm() {
   const [error, setError] = useState('');
   const router = useRouter()
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : any) => {
     e.preventDefault();
     try {
       await userRegister(name, email, password, role);
