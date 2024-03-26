@@ -27,11 +27,17 @@ export default  function MyBookingEditPage({params} : {params : {bid:string}}) {
     if (!session || !session.user.token) return null
 
     const urlParams = useSearchParams()
+<<<<<<< HEAD:src/app/mybooking/edit/[bid]/page.tsx
     const hid = urlParams.get('id')
     //console.log(params.bid);
+=======
+    const id = urlParams.get('id')
+    const hid = urlParams.get('hid')
+>>>>>>> 6ab303683cd9ebc049ca34de7ef15362422f422d:src/app/mybooking/edit/page.tsx
     
     const hotelItems = useAppSelector(state => state.hotelSlice.hotelItems)
     const bookItems = useAppSelector(state => state.bookSlice.bookItems)
+
     
  
     
