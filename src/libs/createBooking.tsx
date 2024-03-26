@@ -8,7 +8,7 @@ export default async function createBooking(startDate : Date , endDate : Date , 
 
     const session = await getServerSession(authOptions);
 
-    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/hotels/${hotel}/bookings`, {
+    const response = await fetch(`http://localhost:3500/api/v1/hotels/${hotel}/bookings`, {
         
         method: 'POST',
         headers: {
