@@ -7,7 +7,7 @@ export default async function updateBooking(id:string, EstartDate : Date , EendD
 
     const session = await getServerSession(authOptions);
 
-    const response = await fetch(`http://localhost:3500/api/v1/bookings/${id}`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/bookings/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
