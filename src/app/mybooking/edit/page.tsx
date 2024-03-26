@@ -12,11 +12,16 @@ import { useAppSelector } from "@/redux/store";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { addBooking } from "@/redux/features/bookSlice";
-import createBooking from "@/libs/createBooking";
+import updateBooking from "@/libs/updateBooking";
 import BottomPage from "@/components/BottomPage";
+import { BookingItem } from "../../../../interface";
+import getBooking from "@/libs/getBooking";
+import getBookings from "@/libs/getBookings";
 
 
-export default function MyBookingEditPage() {
+
+export default async function MyBookingEditPage() {
+
 
     const { data: session } = useSession();
     if (!session || !session.user.token) return null
@@ -36,8 +41,9 @@ export default function MyBookingEditPage() {
         try {
             const startDateTime = startDate.toDate();
             const endDateTime = endDate.toDate();
+            const id = 
     
-            await createBooking(startDateTime, endDateTime, hotel);
+            await updateBooking(id,);
             console.log("makeBooking success");
         } catch (error) {
             console.error("Error making booking:", error);
@@ -80,7 +86,7 @@ export default function MyBookingEditPage() {
 
 
                 
-            <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={makeBooking}>Booking Hotel</button>   
+            <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={makeBooking}>Edit Booking</button>   
             </div>
             </div>
 
