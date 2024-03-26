@@ -1,3 +1,5 @@
+'use server'
+
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { BookingItem } from "../../interface";
 import { getServerSession } from "next-auth";

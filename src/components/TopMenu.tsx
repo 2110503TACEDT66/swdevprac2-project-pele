@@ -1,9 +1,12 @@
+'use server'
+
 import Image from 'next/image'
 import styles from './topmenu.module.css'
-import Link from 'next/link'
+import { Link } from '@mui/material';
 import TopMenuItem from './TopMenuItem';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+
 
 
 export default async function TopMenu() {

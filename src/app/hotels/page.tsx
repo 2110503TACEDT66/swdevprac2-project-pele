@@ -20,16 +20,18 @@ export default function hotelsPage(){
 
     return(
         <main>
-            <div className={styles.banner}>
-            <Image src={'/img/cover.jpeg'}
-            alt='cover'
-            fill={true}
-            priority
-            objectFit='cover'
-            style={{ zIndex: -1 }}
-            />
+            <div className='block p-[5px] m-0 w-[100vw] h-fit relative'>
+                <Image
+                src={'/img/cover.jpeg'}
+                alt='cover'
+                fill={true}
+                priority
+                objectFit='cover'
+                style={{ zIndex: -1 }}
+
+                />
             <div className="flex flex-row m-[20px] mt-[160px] flex-wrap justify-around content-around ">
-                <Suspense fallback={<p className="text-white text-center text-4xl font-sans p-10">Loading ... <LinearProgress className="w-[1000px] h-[20px] rounded-3xl mt-5"/></p>}>
+                <Suspense fallback={<p className="text-white text-center text-4xl font-sans p-10">Loading ... <LinearProgress className="w-[80vw] h-[20px] rounded-3xl mt-5"/></p>}>
                     <HotelCatalog hotelsJson={hotels}/>
                 </Suspense>
             

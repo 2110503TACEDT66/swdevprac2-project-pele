@@ -14,6 +14,7 @@ import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { addBooking } from "@/redux/features/bookSlice";
 import createBooking from "@/libs/createBooking";
+import BottomPage from "@/components/BottomPage";
 
 
 export default function BookingPage(){
@@ -83,28 +84,40 @@ export default function BookingPage(){
             objectFit='cover'
             />
             </div> */}
+
+
+
             <div className="min-h-screen flex items-center justify-center">
-            <div className="text-center">
-            <DateReserve onDateChange={ (value:Dayjs) =>{
-                setStartDate(value) 
-            }} defaultDate={startDate} />
-            <DateReserve onDateChange={ (value:Dayjs) =>{
-                setEndDate(value)
-            }} defaultDate={endDate} />
+            <div className="'justify-center items-center h-[500px] w-[400px] p-9 border rounded-lg mx-auto shadow-md shadow-white hover:shadow-2xl hover:shadow-white'">
+                <div className="text-4xl fonts-sans mb-10 mt-3 ">Booking</div>
+                <div className="text-md fonts-sans mb-1 ">Select Check-in Date</div>
+                <div className="">
+                    <DateReserve onDateChange={ (value:Dayjs) =>{
+                        setStartDate(value) 
+                    }} defaultDate={startDate} />
+                </div>
+                <div className="text-md fonts-sans mt-6 mb-1 ">Select Check-out Date</div>
+                <div>
+                    <DateReserve onDateChange={ (value:Dayjs) =>{
+                        setEndDate(value)
+                    }} defaultDate={endDate} />
+                </div>
+                <div className="text-md fonts-sans mt-6 mb-1 ">Select Hotel</div>
+                <div>
+                    <Select variant="standard" name="hotell" id="hotel" className="h-[2em] w-[200px]" value={hotel} onChange={(event) => {setHotel(event.target.value); console.log(hotel)}}>
+                    {
+                        hotelItems.map((hotelitem) => (
+                            <MenuItem key={hotelitem.id} value={hotelitem.id}> {hotelitem.name}  </MenuItem>
+                        ))
+                    }
+                    </Select> 
+                </div>
 
 
-            <Select variant="standard" name="hospital" id="hospital" className="h-[2em] w-[200px]" value={hotel} onChange={(event) => setHotel(event.target.value)}>
-                {
-                    hotelItems.map((hotelitem) => (
-                        <MenuItem key={hotelitem.id} value={hotelitem.id}> {hotelitem.name}  </MenuItem>
-                    ))
-                }
-            </Select>     
-            <button name="Book Vaccine" className="bg-white p-2 rounded-lg shadow-lg" onClick={makeBooking}>Booking Hotel</button>   
+                
+            <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={makeBooking}>Booking Hotel</button>   
             </div>
             </div>
-  
-
 
         </main>
     );

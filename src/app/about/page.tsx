@@ -20,9 +20,6 @@ export default function About(){
             <AboutUs/>
         </div>
       </div>
-      <div>
-            <BottomPage/>
-        </div>
     </main>
     );
 }

@@ -10,7 +10,7 @@ export default async function BookingList(){
         <>
         { bookItems.length === 0 ? <div>No Hotel Booking</div> :
         bookItems?.data.map( (bookingItem : BookingItem) =>(
-            <div className="bg-slate-200 rounded px-5 mx-5 py-2 my-2" 
+            <div className="bg-slate-200 rounded px-5 mx-5 py-2 my-2 mb-10" 
             key={bookingItem._id}>
                 <div className="text-xl">Hotel: {bookingItem.hotel.name} </div>
                 <div className="text-xl">StartDate: {bookingItem.startDate} </div>
@@ -19,7 +19,7 @@ export default async function BookingList(){
                        
                 <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2
                 text-white shadow-sm"
-                onClick={ ()=> deleteBooking(bookItems._id)}>  
+                onClick={ ()=> { console.log(bookItems._id); deleteBooking(bookItems._id)}}>  
                 Cancel This Booking </button>
             </div>
         ))

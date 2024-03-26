@@ -7,9 +7,7 @@ export default function Home() {
   return (
     <main>
       <Banner/>
-      <div className='h-[200px]'>
-          <BottomPage/>
-      </div>
+
     </main>
   )
 }

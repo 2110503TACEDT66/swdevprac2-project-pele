@@ -1,3 +1,4 @@
+
 import TopMenu from '@/components/TopMenu'
 import './globals.css'
 import type { Metadata } from 'next'
@@ -7,6 +8,7 @@ import NextAuthProvider from '@/providers/NextAuthProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route'
 import ReduxProvider from '@/redux/ReduxProvider'
+import BottomPage from '@/components/BottomPage'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,7 +30,9 @@ export default async function RootLayout({
       <body className={inter.className}>
         <ReduxProvider>
         <NextAuthProvider session={nextAuthSession}>
-          <TopMenu/>{children}
+          <TopMenu/>{children}<div className='h-[200px]'>
+          <BottomPage/>
+      </div>
         </NextAuthProvider>
         </ReduxProvider>
         
