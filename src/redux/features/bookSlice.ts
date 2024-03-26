@@ -24,6 +24,7 @@ export const bookSlice = createSlice({
         },
         addBooking : (state , action : PayloadAction<BookingItem>) => {
             //เงื่อนไข
+            state.bookItems.push(action.payload)
             createBooking(action.payload).then((res) => {
                 getBookings().then((res:BookingJson) => {
                     store.dispatch(setBookingReducer(res.data))
