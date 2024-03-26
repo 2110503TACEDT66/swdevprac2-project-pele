@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import userRegister from '@/libs/userRegister';
+import { useRouter } from 'next/navigation';
 
 export default function RegisterForm() {
 
@@ -10,6 +11,7 @@ export default function RegisterForm() {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('user');
   const [error, setError] = useState('');
+  const router = useRouter()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ export default function RegisterForm() {
       setName('')
       setEmail('')
       setPassword('')
+      router.push('/api/auth/signin');
       
     } catch (error) {
       console.error('Failed to register:', error);

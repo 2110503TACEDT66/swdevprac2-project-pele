@@ -16,6 +16,7 @@ import { addBooking } from "@/redux/features/bookSlice";
 import createBooking from "@/libs/createBooking";
 import BottomPage from "@/components/BottomPage";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 export default function BookingPage(){
@@ -25,6 +26,7 @@ export default function BookingPage(){
 
     const urlParams = useSearchParams()
     const hid = urlParams.get('id')
+    const router = useRouter()
     
     const hotelItems = useAppSelector(state => state.hotelSlice.hotelItems)
     const bookItems = useAppSelector(state => state.bookSlice.bookItems)
@@ -42,6 +44,8 @@ export default function BookingPage(){
             await createBooking(startDateTime, endDateTime, hotel);
             console.log("makeBooking success");
             alert('Booking success')
+            router.push('/mybooking');
+
         } catch (error) {
             console.error("Error making booking:", error);
             alert(error)

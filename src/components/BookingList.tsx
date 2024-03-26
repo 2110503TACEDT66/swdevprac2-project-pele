@@ -15,14 +15,15 @@ export default async function BookingList(){
         <>
         { bookItems.length === 0 ? <div>No Hotel Booking</div> :
         bookItems?.data.map( (bookingItem : BookingItem) =>(
-            <div className="bg-slate-200 rounded px-5 mx-5 py-2 my-2 mb-10" 
+            
+            <div className="bg-slate-200 rounded-xl px-10 mx-5 py-8 my-2 mb-10 font-sans hover:shadow-xl hover:shadow-zinc-500 " 
             key={bookingItem._id}>
-                <div className="text-xl">Hotel: {bookingItem.hotel.name} </div>
-                <div className="text-xl">StartDate: {bookingItem.startDate} </div>
-                <div className="text-xl">EndDate: {bookingItem.endDate} </div>
-                <div className="text-xl">User Id: {bookingItem.user} </div>
+                <div className="text-xl text-cyan-800">Hotel: {bookingItem.hotel.name} </div>
+                <div className="text-xl text-cyan-800">StartDate: {bookingItem.startDate} </div>
+                <div className="text-xl text-cyan-800">EndDate: {bookingItem.endDate} </div>
+                <div className="text-xl text-cyan-800">User Id: {bookingItem.user} </div>
                 
-                <div className="flex flex-row space-x-4 " >
+                <div className="flex flex-row space-x-4 mt-3 " >
 
                 <Link href= {`/mybooking/edit/${bookingItem._id}`}>
                 <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 
