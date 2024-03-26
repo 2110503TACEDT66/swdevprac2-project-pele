@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const LeftToRightTransition = (children : any) => {
+const LeftToRightTransition = ({children} : any) => {
   return (
     <motion.div
       initial={{ x: -100 }} // Start off-screen to the left
