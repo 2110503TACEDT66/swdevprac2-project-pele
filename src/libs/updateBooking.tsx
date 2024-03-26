@@ -1,6 +1,6 @@
 "use server"
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "./auth";
 import { BookingItem } from "../../interface";
 
 export default async function updateBooking(id:string, EstartDate : Date , EendDate : Date , Ehotel : string) {
