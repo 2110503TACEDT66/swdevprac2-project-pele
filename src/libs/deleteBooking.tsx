@@ -17,7 +17,7 @@ export default async function deleteBooking(id:string) {
     });
 
     if (!response.ok) {
-        throw new Error("Failed to delete bookings")
+        throw new Error(`Failed to delete bookings: ${response.statusText}`);
     }
 
     return await response.json();

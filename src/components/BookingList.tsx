@@ -1,6 +1,9 @@
 import { BookingItem, BookingJson } from "../../interface"
 import getBookings from "@/libs/getBookings"
 import deleteBooking from "@/libs/deleteBooking"
+import { useState } from "react";
+import Link from "next/link";
+
 
 export default async function BookingList(){
     //เราอยากได้อะไร
@@ -16,11 +19,19 @@ export default async function BookingList(){
                 <div className="text-xl">StartDate: {bookingItem.startDate} </div>
                 <div className="text-xl">EndDate: {bookingItem.endDate} </div>
                 <div className="text-xl">User Id: {bookingItem.user} </div>
-                       
+                
+                <div className="flex flex-row space-x-4 " >
                 <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2
                 text-white shadow-sm"
                 onClick={ ()=> { console.log(bookItems._id); deleteBooking(bookItems._id)}}>  
                 Cancel This Booking </button>
+                
+                <Link href="/mybooking/edit">
+                <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 
+                text-white shadow-sm"> 
+                Edit This Booking </button>
+                </Link>
+                </div>
             </div>
         ))
         

@@ -8,7 +8,6 @@ import { useState } from "react"
 import dayjs , { Dayjs } from "dayjs"
 import DateReserve from "@/components/DateReserve";
 import { Select, MenuItem } from "@mui/material";
-import { BookingItem } from "../../../interface";
 import { useAppSelector } from "@/redux/store";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
@@ -17,7 +16,7 @@ import createBooking from "@/libs/createBooking";
 import BottomPage from "@/components/BottomPage";
 
 
-export default function BookingPage(){
+export default function MyBookingEditPage() {
 
     const { data: session } = useSession();
     if (!session || !session.user.token) return null
@@ -50,46 +49,12 @@ export default function BookingPage(){
     const [endDate,setEndDate] = useState<Dayjs|null>(null)
 
 
-
-    // const onBooking = async () => {
-
-    //     if (!hotel || !startDate || !endDate) return
-
-    //     const data: BookingItem = {
-    //         _id : hotel ,
-    //         startDate : dayjs(startDate).format("YYYY-MM-DD") , 
-    //         endDate : dayjs(endDate).format("YYYY-MM-DD") ,
-    //         user : session.user._id ,
-    //         hotel: {
-    //           _id: hotel,
-    //           name: "",
-    //           address: "",
-    //           tel: "",
-    //           id: hotel
-    //         },
-    //         createdAt : "" ,
-    //         __v : 0 
-    //     }
- 
-    // }
-
     return(
         <main>
-            {/* <div className="text-lg text-center"> Booking</div>
-            <div className='block p-[5px] m-0 w-[100vw] h-[100vh] relative'>
-            <Image src={'/img/cover.jpeg'}
-            alt='cover'
-            fill={true}
-            priority
-            objectFit='cover'
-            />
-            </div> */}
-
-
 
             <div className="min-h-screen flex items-center justify-center">
             <div className="'justify-center items-center h-[500px] w-[400px] p-9 border rounded-lg mx-auto shadow-md shadow-white hover:shadow-2xl hover:shadow-white'">
-                <div className="text-4xl fonts-sans mb-10 mt-3 ">Booking </div>
+                <div className="text-4xl fonts-sans mb-10 mt-3 ">Edit Booking </div>
                 <div className="text-md fonts-sans mb-1 ">Select Check-in Date</div>
                 <div className="">
                     <DateReserve onDateChange={ (value:Dayjs) =>{
