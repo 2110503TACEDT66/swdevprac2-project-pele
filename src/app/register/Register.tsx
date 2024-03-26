@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import userRegister from '@/libs/userRegister';
 
 export default function RegisterForm() {
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,6 +16,11 @@ export default function RegisterForm() {
     try {
       await userRegister(name, email, password, role);
       console.log('User registered successfully');
+      alert('Registered successfully')
+      setName('')
+      setEmail('')
+      setPassword('')
+      
     } catch (error) {
       console.error('Failed to register:', error);
       setError('Failed to register. Please try again.');
@@ -62,6 +68,7 @@ export default function RegisterForm() {
           />
         </label>
         <br />
+
         <button type="submit" className='text-white text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white'>Register</button>
         {error && <p className="text-red-500">{error}</p>}
       </form>

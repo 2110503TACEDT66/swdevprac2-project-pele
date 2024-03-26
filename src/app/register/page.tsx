@@ -19,7 +19,6 @@ export default function RegisterPage() {
             <Register/>
         </div>
       </div>
-      <BottomPage/>
     </main>
   );
 }

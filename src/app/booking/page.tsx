@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import { addBooking } from "@/redux/features/bookSlice";
 import createBooking from "@/libs/createBooking";
 import BottomPage from "@/components/BottomPage";
+import Link from "next/link";
 
 
 export default function BookingPage(){
@@ -40,8 +41,10 @@ export default function BookingPage(){
     
             await createBooking(startDateTime, endDateTime, hotel);
             console.log("makeBooking success");
+            alert('Booking success')
         } catch (error) {
             console.error("Error making booking:", error);
+            alert(error)
             // Handle error
         }
     };
@@ -51,40 +54,9 @@ export default function BookingPage(){
 
 
 
-    // const onBooking = async () => {
-
-    //     if (!hotel || !startDate || !endDate) return
-
-    //     const data: BookingItem = {
-    //         _id : hotel ,
-    //         startDate : dayjs(startDate).format("YYYY-MM-DD") , 
-    //         endDate : dayjs(endDate).format("YYYY-MM-DD") ,
-    //         user : session.user._id ,
-    //         hotel: {
-    //           _id: hotel,
-    //           name: "",
-    //           address: "",
-    //           tel: "",
-    //           id: hotel
-    //         },
-    //         createdAt : "" ,
-    //         __v : 0 
-    //     }
- 
-    // }
 
     return(
         <main>
-            {/* <div className="text-lg text-center"> Booking</div>
-            <div className='block p-[5px] m-0 w-[100vw] h-[100vh] relative'>
-            <Image src={'/img/cover.jpeg'}
-            alt='cover'
-            fill={true}
-            priority
-            objectFit='cover'
-            />
-            </div> */}
-
 
 
             <div className="min-h-screen flex items-center justify-center">
@@ -114,7 +86,7 @@ export default function BookingPage(){
                 </div>
 
 
-                
+            
             <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={makeBooking}>Booking Hotel</button>   
             </div>
             </div>

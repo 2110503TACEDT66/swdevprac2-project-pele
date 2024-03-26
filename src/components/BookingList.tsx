@@ -23,17 +23,20 @@ export default async function BookingList(){
                 <div className="text-xl">User Id: {bookingItem.user} </div>
                 
                 <div className="flex flex-row space-x-4 " >
-                <Link href="/mybooking">
-                <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2
-                text-white shadow-sm"
-                onClick={ ()=> { console.log(bookingItem._id); deleteBooking(bookingItem._id)}}>  
-                Cancel This Booking </button></Link>
-                
-            <Link href= {`/mybooking/edit/${bookingItem._id}`}>
+
+                <Link href= {`/mybooking/edit/${bookingItem._id}`}>
                 <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 
                 text-white shadow-sm" > 
                 Edit This Booking </button>
                 </Link>
+                
+                <Link href="/mybooking">
+                <button className="block rounded-md bg-red-600 hover:bg-red-800 px-3 py-2
+                text-white shadow-sm"
+                onClick={ ()=> { console.log(bookingItem._id); deleteBooking(bookingItem._id)}}>  
+                Cancel This Booking </button></Link>
+                
+        
                 </div>
             </div>
         ))

@@ -14,7 +14,7 @@ export default async function TopMenu() {
     const session = await getServerSession(authOptions)
 
     return (
-        <div className='h-[100px] fixed left-0 right-0 z-50 flex flex-row bg-sky-950 opacity-70'>
+        <div className='h-[80px] fixed left-0 right-0 z-50 flex flex-row bg-sky-950 '>
             <TopMenuItem title='Home' pageRef='/'/>
             <TopMenuItem title='About us' pageRef='/about'/>
             <TopMenuItem title='Hotels' pageRef='/hotels'/>

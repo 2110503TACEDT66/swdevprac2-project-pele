@@ -23,11 +23,6 @@ export default function BottomPage() {
             <div><Link href={'/hotels'} className="text-white opacity-50 text-sm">Hotels</Link></div>
             <div><Link href={'/booking'} className="text-white opacity-50 text-sm">Booking</Link></div>
         </div>
-        <div className="text-left font-sans p-9">
-            <div className="text-lg"></div>
-            <div><Link href={'/mybooking'} className="text-white opacity-50 text-sm">My Booking</Link></div>
-            <div><Link href={'/hotels'} className="text-white opacity-50 text-sm">Hotels</Link></div>
-        </div>
       </div>
       <div className="bg-slate-100 h-[100px] text-center p-7 font-sans text-md">
         <div className="text-center">All material herein © 2024 Pele Company Pte. Ltd. All Rights Reserved.</div>

@@ -17,7 +17,7 @@ import BottomPage from "@/components/BottomPage";
 import { BookingItem } from "../../../../../interface";
 import getBooking from "@/libs/getBooking";
 import getBookings from "@/libs/getBookings";
-
+import Link from "next/link";
 
 
 export default  function MyBookingEditPage({params} : {params : {bid:string}}) {
@@ -48,7 +48,8 @@ export default  function MyBookingEditPage({params} : {params : {bid:string}}) {
             const id = params.bid
     
              updateBooking(id,startDateTime,endDateTime , hotel);
-            console.log("makeBooking success");
+            console.log("Edit Booking success");
+            alert('Edit Booking success')
         } catch (error) {
             console.error("Error making booking:", error);
             // Handle error
@@ -89,8 +90,9 @@ export default  function MyBookingEditPage({params} : {params : {bid:string}}) {
                 </div>
 
 
-                
+            <Link href="/mybooking">
             <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={editBooking}>Edit Booking</button>   
+           </Link>
             </div>
             </div>
 
