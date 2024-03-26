@@ -1,10 +1,6 @@
-'use client'
-import { removeBooking, setBookingReducer } from "@/redux/features/bookSlice"
-import { useAppSelector , AppDispatch } from "@/redux/store"
-import {  useDispatch } from "react-redux"
-import { useEffect } from "react"
 import { BookingItem, BookingJson } from "../../interface"
 import getBookings from "@/libs/getBookings"
+import deleteBooking from "@/libs/deleteBooking"
 
 export default async function BookingList(){
     //เราอยากได้อะไร
@@ -23,7 +19,7 @@ export default async function BookingList(){
                        
                 <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2
                 text-white shadow-sm"
-                onClick={ ()=> dispatch(removeBooking(bookingItem._id))}>  
+                onClick={ ()=> deleteBooking(bookItems._id)}>  
                 Cancel This Booking </button>
             </div>
         ))

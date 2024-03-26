@@ -1,8 +1,6 @@
 'use client'
-
 import styles from './banner.module.css'
 import Image from 'next/image'
-import { useState } from 'react'
 import TransitionWrapper from '@/motion/TransitionWrapper'
 import LeftToRightTransition from '@/motion/LeftToRightTransition'
 

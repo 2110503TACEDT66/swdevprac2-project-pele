@@ -1,5 +1,4 @@
 'use client'
-
 import HotelCard from "@/components/HotelCard";
 import Image from "next/image";
 import styles from '../page.module.css'
