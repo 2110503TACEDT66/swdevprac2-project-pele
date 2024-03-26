@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { BookingItem } from "../../interface";
 
-export default async function updateBooking(id:string, bookingData: BookingItem) {
+export default async function updateBooking(id:string, EstartDate : Date , EendDate : Date , Ehotel : string) {
 
     const session = await getServerSession(authOptions);
 
@@ -14,9 +14,9 @@ export default async function updateBooking(id:string, bookingData: BookingItem)
             authorization: `Bearer ${session?.user.token}`
         },
         body: JSON.stringify({
-            startDate: bookingData.startDate,
-            endDate: bookingData.endDate,
-            user: bookingData.user,
+            startDate: EstartDate,
+            endDate: EendDate,
+            hotel : Ehotel ,
             //ค่อยเพิ่ม
         })
     });

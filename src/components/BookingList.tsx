@@ -3,11 +3,13 @@ import getBookings from "@/libs/getBookings"
 import deleteBooking from "@/libs/deleteBooking"
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 
 export default async function BookingList(){
     //เราอยากได้อะไร
     const bookItems = await getBookings()
+    //const router = useRouter()
     
     return( //วนลูปแสดงข้อมูลจาก array
         <>
@@ -21,14 +23,15 @@ export default async function BookingList(){
                 <div className="text-xl">User Id: {bookingItem.user} </div>
                 
                 <div className="flex flex-row space-x-4 " >
+                <Link href="/mybooking">
                 <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2
                 text-white shadow-sm"
                 onClick={ ()=> { console.log(bookingItem._id); deleteBooking(bookingItem._id)}}>  
-                Cancel This Booking </button>
+                Cancel This Booking </button></Link>
                 
-                <Link href="/mybooking/edit">
+            <Link href= {`/mybooking/edit/${bookingItem._id}`}>
                 <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 
-                text-white shadow-sm"> 
+                text-white shadow-sm" > 
                 Edit This Booking </button>
                 </Link>
                 </div>
@@ -38,6 +41,9 @@ export default async function BookingList(){
         
         }
         </>
+        
 
     )
+
+    //onClick={ () => router.push(`/mybooking/edit/${bookingItem._id}`) }
 }

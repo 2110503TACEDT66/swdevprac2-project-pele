@@ -14,13 +14,13 @@ import { useEffect } from "react";
 import { addBooking } from "@/redux/features/bookSlice";
 import updateBooking from "@/libs/updateBooking";
 import BottomPage from "@/components/BottomPage";
-import { BookingItem } from "../../../../interface";
+import { BookingItem } from "../../../../../interface";
 import getBooking from "@/libs/getBooking";
 import getBookings from "@/libs/getBookings";
 
 
 
-export default async function MyBookingEditPage() {
+export default  function MyBookingEditPage({params} : {params : {bid:string}}) {
 
 
     const { data: session } = useSession();
@@ -28,22 +28,25 @@ export default async function MyBookingEditPage() {
 
     const urlParams = useSearchParams()
     const hid = urlParams.get('id')
+    //console.log(params.bid);
     
     const hotelItems = useAppSelector(state => state.hotelSlice.hotelItems)
     const bookItems = useAppSelector(state => state.bookSlice.bookItems)
     
+ 
+    
 
     const dispatch = useDispatch<AppDispatch>()
 
-    const makeBooking = async () => {
+    const editBooking =  () => {
         if (!hotel || !startDate || !endDate) return;
     
         try {
             const startDateTime = startDate.toDate();
             const endDateTime = endDate.toDate();
-            const id = 
+            const id = params.bid
     
-            await updateBooking(id,);
+             updateBooking(id,startDateTime,endDateTime , hotel);
             console.log("makeBooking success");
         } catch (error) {
             console.error("Error making booking:", error);
@@ -86,7 +89,7 @@ export default async function MyBookingEditPage() {
 
 
                 
-            <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={makeBooking}>Edit Booking</button>   
+            <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={editBooking}>Edit Booking</button>   
             </div>
             </div>
 
