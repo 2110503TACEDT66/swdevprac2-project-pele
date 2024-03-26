@@ -29,7 +29,7 @@ export default function hotelsPage(){
             objectFit='cover'
             style={{ zIndex: -1 }}
             />
-            <div className="flex flex-row m-[20px] mt-[200px] flex-wrap justify-around content-around ">
+            <div className="flex flex-row m-[20px] mt-[160px] flex-wrap justify-around content-around ">
                 <Suspense fallback={<p className="text-white text-center text-4xl font-sans p-10">Loading ... <LinearProgress className="w-[1000px] h-[20px] rounded-3xl mt-5"/></p>}>
                     <HotelCatalog hotelsJson={hotels}/>
                 </Suspense>

@@ -2,11 +2,11 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { BookingItem } from "../../interface";
 import { getServerSession } from "next-auth";
 
-export default async function createBooking(bookingData: BookingItem) {
+export default async function createBooking(startDate : Date , endDate : Date , hotel : string) {
 
     const session = await getServerSession(authOptions);
 
-    const response = await fetch(`http://localhost:3500/api/v1/hotels/${bookingData.hotel}/bookings`, {
+    const response = await fetch(`http://localhost:3500/api/v1/hotels/${hotel}/bookings`, {
         
         method: 'POST',
         headers: {
@@ -14,9 +14,8 @@ export default async function createBooking(bookingData: BookingItem) {
             authorization: `Bearer ${session?.user.token}`
         },
         body: JSON.stringify({
-            startDate: bookingData.startDate,
-            endDate: bookingData.endDate,
-            user: bookingData.user,
+            startDate: startDate,
+            endDate: endDate
         })
     });
 

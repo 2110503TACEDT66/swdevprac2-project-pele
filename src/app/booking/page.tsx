@@ -14,41 +14,38 @@ import { useAppSelector } from "@/redux/store";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { addBooking } from "@/redux/features/bookSlice";
+import createBooking from "@/libs/createBooking";
 
 
 export default function BookingPage(){
 
     const { data: session } = useSession();
     if (!session || !session.user.token) return null
+
+    const urlParams = useSearchParams()
+    const hid = urlParams.get('id')
     
     const hotelItems = useAppSelector(state => state.hotelSlice.hotelItems)
     const bookItems = useAppSelector(state => state.bookSlice.bookItems)
+    
 
     const dispatch = useDispatch<AppDispatch>()
 
-    const makeBooking = () => {
-        if (hotel && startDate && endDate){
-            const item: BookingItem = {
-                _id : hotel ,
-                startDate : dayjs(startDate).format("YYYY-MM-DD") , 
-                endDate : dayjs(endDate).format("YYYY-MM-DD") ,
-                user : session.user.email ,
-                hotel: {
-                _id: hotel,
-                name: "",
-                address: "",
-                tel: "",
-                id: hotel
-                },
-                createdAt : "" ,
-                __v : 0 
-            }
+    const makeBooking = async () => {
+        if (!hotel || !startDate || !endDate) return;
+    
+        try {
+            const startDateTime = startDate.toDate();
+            const endDateTime = endDate.toDate();
+    
+            await createBooking(startDateTime, endDateTime, hotel);
             console.log("makeBooking success");
-            dispatch(addBooking(item))
+        } catch (error) {
+            console.error("Error making booking:", error);
+            // Handle error
         }
-
-    }
-    const [hotel , setHotel] = useState<string>("")
+    };
+    const [hotel , setHotel] = useState<string>(hid || '')
     const [startDate,setStartDate] = useState<Dayjs|null>(null)
     const [endDate,setEndDate] = useState<Dayjs|null>(null)
 

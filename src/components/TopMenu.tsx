@@ -22,13 +22,13 @@ export default async function TopMenu() {
             session? '' : <TopMenuItem title='Register' pageRef='/register'/>
         }
         {
-            session? <TopMenuItem title='Sign Out' pageRef='/api/auth/signout'/> :
-            <TopMenuItem title='Sign In' pageRef='/api/auth/signin'/>
-        }
-        {
             session? <TopMenuItem title='My Booking' pageRef='/mybooking'/> : ''
         }  
 
+        {
+            session? <TopMenuItem title='Sign Out' pageRef='/api/auth/signout'/> :
+            <TopMenuItem title='Sign In' pageRef='/api/auth/signin'/>
+        }
         </div>
         </div>
     );

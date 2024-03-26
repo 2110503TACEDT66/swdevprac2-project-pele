@@ -3,30 +3,17 @@ import { removeBooking, setBookingReducer } from "@/redux/features/bookSlice"
 import { useAppSelector , AppDispatch } from "@/redux/store"
 import {  useDispatch } from "react-redux"
 import { useEffect } from "react"
-import { BookingJson } from "../../interface"
+import { BookingItem, BookingJson } from "../../interface"
 import getBookings from "@/libs/getBookings"
 
-export default function BookingList(){
+export default async function BookingList(){
     //เราอยากได้อะไร
-    const bookItems = useAppSelector(state => state.bookSlice.bookItems)
-    
-    //เพิ่มการลบ
-    const dispatch = useDispatch<AppDispatch>()
-    console.log(bookItems)
-
-        
-    useEffect(() => {
-        const fetchBooking = async () => {
-            const booking:BookingJson = await getBookings();
-            dispatch(setBookingReducer(booking.data))
-        }
-        fetchBooking();
-    }, [dispatch])
+    const bookItems = await getBookings()
     
     return( //วนลูปแสดงข้อมูลจาก array
         <>
         { bookItems.length === 0 ? <div>No Hotel Booking</div> :
-        bookItems.map( (bookingItem) =>(
+        bookItems?.data.map( (bookingItem : BookingItem) =>(
             <div className="bg-slate-200 rounded px-5 mx-5 py-2 my-2" 
             key={bookingItem._id}>
                 <div className="text-xl">Hotel: {bookingItem.hotel.name} </div>
